@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckatvhjiwr7tn"]
+
+[ext_resource type="PackedScene" uid="uid://bw6s80j62qws6" path="res://scenes/bricks/brick.tscn" id="1_0dybs"]
+[ext_resource type="Script" path="res://scenes/bricks/blue_brick.gd" id="2_kof2y"]
+
+[node name="BlueBrick" groups=["blue_brick"] instance=ExtResource("1_0dybs")]
+modulate = Color(2.96485e-05, 0.545202, 0.969041, 1)
+script = ExtResource("2_kof2y")
