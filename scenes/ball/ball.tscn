@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scenes/ball/ball.gd" id="1_va4od"]
 
-[sub_resource type="Gradient" id="Gradient_ltjuk"]
+[sub_resource type="Gradient" id="Gradient_gsvsm"]
 interpolation_mode = 1
 offsets = PackedFloat32Array(0.988506, 1)
 colors = PackedColorArray(0.639216, 0.317647, 0, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lt3c1"]
-gradient = SubResource("Gradient_ltjuk")
+gradient = SubResource("Gradient_gsvsm")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)

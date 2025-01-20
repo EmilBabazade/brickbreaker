@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqk1i48aqusrt"]
+[gd_scene load_steps=4 format=3 uid="uid://cqk1i48aqusrt"]
 
 [ext_resource type="Script" path="res://scenes/user_interface/ui.gd" id="1_chsni"]
+
+[sub_resource type="Gradient" id="Gradient_eng0i"]
+interpolation_mode = 1
+colors = PackedColorArray(0.639216, 0.317647, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tavlq"]
+gradient = SubResource("Gradient_eng0i")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_chsni")
@@ -16,3 +26,26 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "0"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.981
+anchor_right = 0.019
+anchor_bottom = 1.0
+offset_left = 0.112001
+offset_top = -64.376
+offset_right = 78.112
+offset_bottom = -0.376038
+grow_vertical = 0
+
+[node name="Health" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "3"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("GradientTexture2D_tavlq")
+expand_mode = 2
