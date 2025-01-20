@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuk4jkbt5fos8"]
+
+[ext_resource type="PackedScene" uid="uid://bw6s80j62qws6" path="res://scenes/bricks/brick.tscn" id="1_1jhy2"]
+[ext_resource type="Script" path="res://scenes/bricks/orange_brick.gd" id="2_na8i3"]
+
+[node name="OrangeBrick" instance=ExtResource("1_1jhy2")]
+script = ExtResource("2_na8i3")
+
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(0.87451, 0.403922, 0.105882, 1)
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false

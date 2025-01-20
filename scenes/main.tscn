@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cnx8ievhje3ma"]
+[gd_scene load_steps=11 format=3 uid="uid://cnx8ievhje3ma"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_x6lck"]
 [ext_resource type="PackedScene" uid="uid://dpg0m1ms3vuxq" path="res://scenes/player/player.tscn" id="1_yfe1c"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bw6s80j62qws6" path="res://scenes/bricks/brick.tscn" id="3_s40pm"]
 [ext_resource type="PackedScene" uid="uid://ckatvhjiwr7tn" path="res://scenes/bricks/blue_brick.tscn" id="5_pe2kw"]
 [ext_resource type="PackedScene" uid="uid://cqk1i48aqusrt" path="res://scenes/user_interface/ui.tscn" id="6_2qpyi"]
+[ext_resource type="PackedScene" uid="uid://cuk4jkbt5fos8" path="res://scenes/bricks/orange_brick.tscn" id="6_xxulx"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_uqpj5"]
 
@@ -858,5 +859,62 @@ position = Vector2(936, 344)
 
 [node name="BlueBrick18" parent="Bricks" instance=ExtResource("5_pe2kw")]
 position = Vector2(408, 216)
+
+[node name="OrangeBrick" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(240, 56)
+
+[node name="OrangeBrick2" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(480, 56)
+
+[node name="OrangeBrick3" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(696, 88)
+
+[node name="OrangeBrick4" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(864, 120)
+
+[node name="OrangeBrick5" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(1056, 184)
+
+[node name="OrangeBrick6" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(1056, 312)
+
+[node name="OrangeBrick7" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(888, 280)
+
+[node name="OrangeBrick8" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(744, 344)
+
+[node name="OrangeBrick9" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(696, 216)
+
+[node name="OrangeBrick10" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(528, 184)
+
+[node name="OrangeBrick11" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(480, 248)
+
+[node name="OrangeBrick12" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(408, 152)
+
+[node name="OrangeBrick13" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(264, 152)
+
+[node name="OrangeBrick14" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(360, 280)
+
+[node name="OrangeBrick18" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(312, 344)
+
+[node name="OrangeBrick19" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(456, 344)
+
+[node name="OrangeBrick15" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(168, 280)
+
+[node name="OrangeBrick16" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(72, 216)
+
+[node name="OrangeBrick17" parent="Bricks" instance=ExtResource("6_xxulx")]
+position = Vector2(312, 216)
 
 [node name="UI" parent="." instance=ExtResource("6_2qpyi")]
