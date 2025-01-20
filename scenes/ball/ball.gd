@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var speed: float = 400
 var direction: Vector2
 
 func _ready() -> void:
@@ -24,3 +24,5 @@ func _physics_process(delta: float) -> void:
 		direction = direction.bounce(collision_normal).normalized()
 		if 'hit' in collider:
 			collider.hit()
+		if 'green_hit' in collider:
+			collider.green_hit(self)
