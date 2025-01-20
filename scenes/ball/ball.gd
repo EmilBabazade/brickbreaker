@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 600
+@export var speed = 400
 var direction: Vector2
 
 func _ready() -> void:
@@ -22,3 +22,5 @@ func _physics_process(delta: float) -> void:
 		#$AudioStreamPlayer.pitch_scale = randf_range(0.8, 1.2)
 		#$AudioStreamPlayer.play()
 		direction = direction.bounce(collision_normal).normalized()
+		if 'hit' in collider:
+			collider.hit()
