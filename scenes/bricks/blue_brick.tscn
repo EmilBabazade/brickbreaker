@@ -6,3 +6,4 @@
 [node name="BlueBrick" groups=["blue_brick"] instance=ExtResource("1_0dybs")]
 modulate = Color(2.96485e-05, 0.545202, 0.969041, 1)
 script = ExtResource("2_kof2y")
+score = 2
