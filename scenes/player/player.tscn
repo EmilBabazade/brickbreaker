@@ -11,10 +11,11 @@ size = Vector2(128, 16)
 collision_mask = 6
 script = ExtResource("1_ej0ie")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["entity"]]
 modulate = Color(0.529412, 0.188235, 0.188235, 1)
 scale = Vector2(128, 16)
 texture = SubResource("CanvasTexture_q3str")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_qbtnq")
