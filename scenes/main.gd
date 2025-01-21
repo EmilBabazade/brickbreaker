@@ -3,14 +3,25 @@ extends Node2D
 var ball_scene: PackedScene = preload("res://scenes/ball/ball.tscn")
 var ball_count = 1
 @export var ball_start_pos = Vector2(576, 536)
+var game_over = false
+
+signal balls_deleted
 
 func _process(_delta: float) -> void:
-	if Globals.health <= 0:
+	if Globals.health <= 0 and not game_over:
+		delete_balls()
+		await balls_deleted
 		$Player.stop()
 		$UI.game_over()
+		game_over = true
+	if $Bricks.get_child_count() <= 0 and not game_over:
+		delete_balls()
+		await balls_deleted
+		$Player.stop()
+		$UI.game_over()
+		game_over = true
 
 func _ready() -> void:
-	Globals.brick_count = $Bricks.get_child_count()
 	var blue_bricks = get_tree().get_nodes_in_group('blue_brick')
 	for bb in blue_bricks:
 		bb.connect('more_balls', add_more_balls)
@@ -18,11 +29,20 @@ func _ready() -> void:
 	for gb in green_bricks:
 		gb.connect('green_brick_hit', on_green_brick_hit)
 
+func delete_balls():
+	var balls = $Balls.get_children()
+	for ball in balls:
+		var audio = ball.get_node("AudioStreamPlayer")
+		if audio:
+			audio.stop()
+		ball.queue_free()
+	balls_deleted.emit()
+
 func add_more_balls(pos: Vector2):
 	if Globals.health > 0:
 		var ball = ball_scene.instantiate()
 		ball.position = pos
-		add_child(ball)
+		$Balls.add_child(ball)
 		ball_count += 1
 
 func on_green_brick_hit(ball: Node2D):
@@ -33,14 +53,11 @@ func _on_bottom_wall_body_entered(body: Node2D) -> void:
 	ball_count -= 1
 	if ball_count <= 0:
 		Globals.health -= 1
-		if Globals.health <= 0:
-			$GameOverAudioStreamPlayer.play()
-		else:
-			$HealthLoseAudioStreamPlayer.play()
+		$HealthLoseAudioStreamPlayer.play()
 		await get_tree().create_timer(1).timeout
 		add_more_balls(ball_start_pos)
 
 func _on_ui_restart() -> void:
+	game_over = false
 	Globals.restart()
-	Globals.brick_count = $Bricks.get_child_count()
 	get_tree().reload_current_scene()

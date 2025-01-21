@@ -23,6 +23,8 @@ func get_input():
 		if Globals.mouse_controls and follow_mouse:
 			var mouse_loc = get_global_mouse_position()
 			var mouse_dir_x = global_position.direction_to(mouse_loc).x
+			print('mouse_dir_x ', mouse_dir_x)
+			print('direction.x ', direction.x)
 			direction.x = mouse_dir_x
 		else:
 			direction.x = Input.get_axis('left', 'right')

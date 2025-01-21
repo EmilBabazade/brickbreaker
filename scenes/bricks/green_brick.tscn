@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7bletm8t0mw3"]
+[gd_scene load_steps=4 format=3 uid="uid://c7bletm8t0mw3"]
 
 [ext_resource type="PackedScene" uid="uid://bw6s80j62qws6" path="res://scenes/bricks/brick.tscn" id="1_unxmi"]
 [ext_resource type="Script" path="res://scenes/bricks/green_brick.gd" id="2_vyng1"]
+[ext_resource type="AudioStream" uid="uid://ds60usjoh4573" path="res://sounds/GameSFX/Blops/Retro Blop StereoUP 04.wav" id="3_8t6bs"]
 
 [node name="GreenBrick" groups=["green_brick"] instance=ExtResource("1_unxmi")]
 modulate = Color(0.283588, 0.460282, 0.185175, 1)
@@ -9,3 +10,6 @@ script = ExtResource("2_vyng1")
 
 [node name="CollisionShape2D" parent="." index="1"]
 visible = false
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("3_8t6bs")

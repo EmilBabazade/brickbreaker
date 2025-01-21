@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cnx8ievhje3ma"]
+[gd_scene load_steps=16 format=3 uid="uid://cnx8ievhje3ma"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_x6lck"]
 [ext_resource type="PackedScene" uid="uid://dpg0m1ms3vuxq" path="res://scenes/player/player.tscn" id="1_yfe1c"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://c7bletm8t0mw3" path="res://scenes/bricks/green_brick.tscn" id="8_m7dce"]
 [ext_resource type="PackedScene" uid="uid://4285h8pkb0kx" path="res://scenes/bricks/pink_brick.tscn" id="9_ux611"]
 [ext_resource type="AudioStream" uid="uid://cvxmp3q6qa38q" path="res://sounds/GameSFX/Descending/Retro Descending Short 14.wav" id="11_eu1it"]
-[ext_resource type="AudioStream" uid="uid://ba3jj7yb80byt" path="res://sounds/GameSFX/Descending/Retro Descending Long 04.wav" id="12_bstln"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_uqpj5"]
 
@@ -35,6 +34,7 @@ texture = SubResource("CanvasTexture_uqpj5")
 
 [node name="Player" parent="." instance=ExtResource("1_yfe1c")]
 position = Vector2(576, 568)
+max_speed = 20000
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -66,16 +66,13 @@ position = Vector2(600, -351)
 shape = SubResource("RectangleShape2D_j1gh4")
 
 [node name="BottomWall" type="Area2D" parent="Walls"]
-position = Vector2(576, 656)
+position = Vector2(584, 760)
 collision_layer = 2
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall"]
-position = Vector2(0, 4)
+position = Vector2(-8, -104)
 shape = SubResource("RectangleShape2D_lgjva")
-
-[node name="Ball" parent="." instance=ExtResource("2_a6prq")]
-position = Vector2(576, 536)
 
 [node name="Bricks" type="Node2D" parent="."]
 
@@ -930,8 +927,10 @@ position = Vector2(96, 184)
 [node name="HealthLoseAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_eu1it")
 
-[node name="GameOverAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_bstln")
+[node name="Balls" type="Node2D" parent="."]
+
+[node name="Ball" parent="Balls" instance=ExtResource("2_a6prq")]
+position = Vector2(576, 536)
 
 [connection signal="body_entered" from="Walls/BottomWall" to="." method="_on_bottom_wall_body_entered"]
 [connection signal="restart" from="UI" to="." method="_on_ui_restart"]

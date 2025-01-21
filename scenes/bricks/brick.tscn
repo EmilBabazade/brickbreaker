@@ -18,3 +18,5 @@ texture = SubResource("CanvasTexture_nxnh4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4ris0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

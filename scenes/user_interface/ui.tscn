@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqk1i48aqusrt"]
+[gd_scene load_steps=9 format=3 uid="uid://cqk1i48aqusrt"]
 
 [ext_resource type="Script" path="res://scenes/user_interface/ui.gd" id="1_chsni"]
 [ext_resource type="FontFile" uid="uid://dwblw0b46amqp" path="res://fonts/Teko-VariableFont_wght.ttf" id="2_dufk1"]
+[ext_resource type="AudioStream" uid="uid://ba3jj7yb80byt" path="res://sounds/GameSFX/Descending/Retro Descending Long 04.wav" id="3_8yam4"]
+[ext_resource type="AudioStream" uid="uid://cothnsvoquexf" path="res://sounds/GameSFX/Music/Success/Retro Success Melody 04 - electric piano 2.wav" id="4_eydnq"]
 
 [sub_resource type="Gradient" id="Gradient_eng0i"]
 interpolation_mode = 1
@@ -99,6 +101,13 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_dufk1")
 theme_override_font_sizes/font_size = 50
 text = "Main Menu"
+
+[node name="GameOverAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8yam4")
+
+[node name="GameWonAudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_eydnq")
+volume_db = 21.629
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

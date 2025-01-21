@@ -16,8 +16,10 @@ func on_health_changed():
 func game_over():
 	if Globals.health <= 0:
 		$VBoxContainer/GameOver.text = 'YOU LOST!'
+		$GameOverAudioStreamPlayer.play()
 	else:
 		$VBoxContainer/GameOver.text = 'YOU WIN!'
+		$GameWonAudioStreamPlayer2.play()
 	$VBoxContainer/FinalScore.text = 'Score: ' + str(Globals.score)
 	$VBoxContainer.visible = true
 

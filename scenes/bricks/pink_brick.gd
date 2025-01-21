@@ -1,5 +1,6 @@
 extends Brick
 
 func hit():
-	Globals.health += 1
+	if not dying:
+		Globals.health += 1
 	super()

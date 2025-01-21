@@ -28,5 +28,5 @@ texture = SubResource("GradientTexture2D_lt3c1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jnnsv")
 
-[node name="BounceAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BounceAudioStreamPlayer" type="AudioStreamPlayer" parent="." groups=["ball"]]
 stream = ExtResource("2_ws808")

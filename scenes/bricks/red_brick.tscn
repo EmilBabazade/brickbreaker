@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cars24m0quexe"]
+[gd_scene load_steps=3 format=3 uid="uid://cars24m0quexe"]
 
 [ext_resource type="PackedScene" uid="uid://bw6s80j62qws6" path="res://scenes/bricks/brick.tscn" id="1_v21pk"]
+[ext_resource type="AudioStream" uid="uid://ceeqoeiqb4n73" path="res://sounds/GameSFX/Blops/Retro Blop StereoUP 09.wav" id="2_d0bmf"]
 
 [node name="Brick" instance=ExtResource("1_v21pk")]
 score = 2
@@ -11,3 +12,6 @@ modulate = Color(0.721569, 0.109804, 0.117647, 1)
 
 [node name="CollisionShape2D" parent="." index="1"]
 visible = false
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("2_d0bmf")

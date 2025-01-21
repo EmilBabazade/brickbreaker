@@ -10,18 +10,16 @@ var score = 0:
 		score = value
 		score_changed.emit()
 
-var health = 3:
+var max_health = 3
+var health = max_health:
 	get:
 		return health
 	set(value):
 		health = value
 		health_changed.emit()
 
-# just some nonzero intial value
-var brick_count: int = -1
-
 var mouse_controls = true
 
 func restart():
 	score = 0
-	health = 3
+	health = max_health

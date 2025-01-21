@@ -8,6 +8,7 @@
 size = Vector2(128, 16)
 
 [node name="Player" type="StaticBody2D"]
+scale = Vector2(2, 1)
 collision_mask = 6
 script = ExtResource("1_ej0ie")
 
@@ -17,5 +18,4 @@ scale = Vector2(128, 16)
 texture = SubResource("CanvasTexture_q3str")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_qbtnq")
