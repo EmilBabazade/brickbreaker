@@ -3,8 +3,7 @@ extends CanvasLayer
 signal restart
 
 func _ready() -> void:
-	on_score_changed()
-	on_health_changed()
+	reset()
 	Globals.connect('score_changed', on_score_changed)
 	Globals.connect('health_changed', on_health_changed)
 
@@ -31,3 +30,7 @@ func reset():
 func _on_restart_button_pressed() -> void:
 	reset()
 	restart.emit()
+
+
+func _on_menu_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/user_interface/main_menu.tscn")

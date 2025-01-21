@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqk1i48aqusrt"]
+[gd_scene load_steps=7 format=3 uid="uid://cqk1i48aqusrt"]
 
 [ext_resource type="Script" path="res://scenes/user_interface/ui.gd" id="1_chsni"]
 [ext_resource type="FontFile" uid="uid://dwblw0b46amqp" path="res://fonts/Teko-VariableFont_wght.ttf" id="2_dufk1"]
@@ -12,6 +12,12 @@ gradient = SubResource("Gradient_eng0i")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrs8b"]
+bg_color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x7yy"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_chsni")
@@ -54,7 +60,6 @@ texture = SubResource("GradientTexture2D_tavlq")
 expand_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-modulate = Color(0.186056, 0.306546, 1, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -71,6 +76,7 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_dufk1")
 theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_jrs8b")
 text = "YOU WON!"
 horizontal_alignment = 1
 
@@ -78,6 +84,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_dufk1")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_3x7yy")
 text = "Score: "
 horizontal_alignment = 1
 
@@ -94,3 +101,4 @@ theme_override_font_sizes/font_size = 50
 text = "Main Menu"
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
