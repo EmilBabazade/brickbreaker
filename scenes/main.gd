@@ -33,6 +33,10 @@ func _on_bottom_wall_body_entered(body: Node2D) -> void:
 	ball_count -= 1
 	if ball_count <= 0:
 		Globals.health -= 1
+		if Globals.health <= 0:
+			$GameOverAudioStreamPlayer.play()
+		else:
+			$HealthLoseAudioStreamPlayer.play()
 		await get_tree().create_timer(1).timeout
 		add_more_balls(ball_start_pos)
 

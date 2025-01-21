@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://balggeyxwsb5r"
+path="res://.godot/imported/Retro Instrument - drumset - C10.wav-3a231f379f1a06c7da1e1b5d89731cb9.sample"
+
+[deps]
+
+source_file="res://sounds/Instruments/Retro Instrument - drumset - C10.wav"
+dest_files=["res://.godot/imported/Retro Instrument - drumset - C10.wav-3a231f379f1a06c7da1e1b5d89731cb9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

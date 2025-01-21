@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://lqoyttyvi3nu"]
+[gd_scene load_steps=6 format=3 uid="uid://lqoyttyvi3nu"]
 
 [ext_resource type="Script" path="res://scenes/ball/ball.gd" id="1_va4od"]
+[ext_resource type="AudioStream" uid="uid://c2jqpwq1oc355" path="res://sounds/GameSFX/Bounce Jump/Retro Jump Classic 08.wav" id="2_ws808"]
 
 [sub_resource type="Gradient" id="Gradient_gsvsm"]
 interpolation_mode = 1
@@ -26,3 +27,6 @@ texture = SubResource("GradientTexture2D_lt3c1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jnnsv")
+
+[node name="BounceAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ws808")

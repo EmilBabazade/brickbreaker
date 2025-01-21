@@ -20,7 +20,7 @@ var health = 3:
 # just some nonzero intial value
 var brick_count: int = -1
 
-var mouse_controls = false
+var mouse_controls = true
 
 func restart():
 	score = 0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4eh83g87cb4p"
+path="res://.godot/imported/Retro Ring 04.wav-a4438549d15b03d87e3633c22925c13f.sample"
+
+[deps]
+
+source_file="res://sounds/GameSFX/z_Various/Retro Ring 04.wav"
+dest_files=["res://.godot/imported/Retro Ring 04.wav-a4438549d15b03d87e3633c22925c13f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
