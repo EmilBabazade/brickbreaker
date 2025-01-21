@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqk1i48aqusrt"]
+[gd_scene load_steps=5 format=3 uid="uid://cqk1i48aqusrt"]
 
 [ext_resource type="Script" path="res://scenes/user_interface/ui.gd" id="1_chsni"]
+[ext_resource type="FontFile" uid="uid://dwblw0b46amqp" path="res://fonts/Teko-VariableFont_wght.ttf" id="2_dufk1"]
 
 [sub_resource type="Gradient" id="Gradient_eng0i"]
 interpolation_mode = 1
@@ -25,6 +26,7 @@ offset_left = -40.0
 offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_dufk1")
 text = "0"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -41,6 +43,7 @@ grow_vertical = 0
 
 [node name="Health" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dufk1")
 text = "3"
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
@@ -51,7 +54,6 @@ texture = SubResource("GradientTexture2D_tavlq")
 expand_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
 modulate = Color(0.186056, 0.306546, 1, 1)
 anchors_preset = 8
 anchor_left = 0.5
@@ -67,22 +69,27 @@ grow_vertical = 2
 
 [node name="GameOver" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dufk1")
 theme_override_font_sizes/font_size = 100
 text = "YOU WON!"
+horizontal_alignment = 1
 
 [node name="FinalScore" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dufk1")
 theme_override_font_sizes/font_size = 50
 text = "Score: "
 horizontal_alignment = 1
 
 [node name="RestartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dufk1")
 theme_override_font_sizes/font_size = 50
 text = "RESTART"
 
 [node name="MenuButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dufk1")
 theme_override_font_sizes/font_size = 50
 text = "Main Menu"
 
