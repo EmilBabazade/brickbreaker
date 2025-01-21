@@ -6,6 +6,7 @@ var ball_count = 1
 
 func _process(_delta: float) -> void:
 	if Globals.health <= 0:
+		$Player.stop()
 		$UI.game_over()
 
 func _ready() -> void:

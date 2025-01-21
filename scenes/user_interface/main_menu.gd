@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-var mouse_controls = false
-
 func _ready() -> void:
 	set_control_text()
 
@@ -10,11 +8,11 @@ func _on_quit_pressed() -> void:
 
 
 func _on_controls_pressed() -> void:
-	mouse_controls = !mouse_controls
+	Globals.mouse_controls = !Globals.mouse_controls
 	set_control_text()
 
 func set_control_text():
-	if mouse_controls:
+	if Globals.mouse_controls:
 		$VBoxContainer/Controls.text = 'CONTROLS: MOUSE'
 	else:
 		$VBoxContainer/Controls.text = 'CONTROLS: KEYBOARD'
