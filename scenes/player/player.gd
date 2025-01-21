@@ -1,6 +1,6 @@
-extends StaticBody2D
+extends CharacterBody2D
 
-@export var max_speed = 600
+@export var max_speed = 20000
 var speed = max_speed
 var direction: Vector2 = Vector2.ZERO
 var follow_mouse = true
@@ -23,22 +23,19 @@ func get_input():
 		if Globals.mouse_controls and follow_mouse:
 			var mouse_loc = get_global_mouse_position()
 			var mouse_dir_x = global_position.direction_to(mouse_loc).x
-			print('mouse_dir_x ', mouse_dir_x)
-			print('direction.x ', direction.x)
 			direction.x = mouse_dir_x
 		else:
 			direction.x = Input.get_axis('left', 'right')
 
 func handle_mouse_entered():
 	follow_mouse = false
-	print('mouse entered')
 
 func handle_mouse_exited():
 	follow_mouse = true
-	print('mouse exited')
 
 func move(delta: float):
-	move_and_collide(direction * delta * speed)
+	velocity = direction * delta * speed
+	move_and_slide()
 
 func stop():
 	speed = 0
