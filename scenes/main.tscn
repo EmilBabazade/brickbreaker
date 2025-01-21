@@ -926,3 +926,4 @@ position = Vector2(96, 184)
 [node name="UI" parent="." instance=ExtResource("6_2qpyi")]
 
 [connection signal="body_entered" from="Walls/BottomWall" to="." method="_on_bottom_wall_body_entered"]
+[connection signal="restart" from="UI" to="." method="_on_ui_restart"]

@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal restart
+
 func _ready() -> void:
 	on_score_changed()
 	on_health_changed()
@@ -24,3 +26,8 @@ func reset():
 	$VBoxContainer.visible = false
 	on_score_changed()
 	on_health_changed()
+
+
+func _on_restart_button_pressed() -> void:
+	reset()
+	restart.emit()

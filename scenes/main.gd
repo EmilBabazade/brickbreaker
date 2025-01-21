@@ -34,3 +34,8 @@ func _on_bottom_wall_body_entered(body: Node2D) -> void:
 		Globals.health -= 1
 		await get_tree().create_timer(1).timeout
 		add_more_balls(ball_start_pos)
+
+func _on_ui_restart() -> void:
+	Globals.restart()
+	Globals.brick_count = $Bricks.get_child_count()
+	get_tree().reload_current_scene()
