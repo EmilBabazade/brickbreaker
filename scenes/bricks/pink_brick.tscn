@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://4285h8pkb0kx"]
+
+[ext_resource type="PackedScene" uid="uid://bw6s80j62qws6" path="res://scenes/bricks/brick.tscn" id="1_43cwr"]
+[ext_resource type="Script" path="res://scenes/bricks/pink_brick.gd" id="2_h8yk7"]
+
+[node name="PinkBrick" instance=ExtResource("1_43cwr")]
+script = ExtResource("2_h8yk7")
+
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(0.816317, 0.292446, 0.566379, 1)
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
