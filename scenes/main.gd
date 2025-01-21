@@ -5,7 +5,39 @@ var ball_count = 1
 @export var ball_start_pos = Vector2(576, 536)
 var game_over = false
 
+var columns = 32
+var rows = 15
+var margin = 50
+
+var brick_scenes: Array[PackedScene] = [
+	preload("res://scenes/bricks/brick.tscn"),
+	preload("res://scenes/bricks/brick.tscn"),
+	preload("res://scenes/bricks/brick.tscn"),
+	preload("res://scenes/bricks/brick.tscn"),
+	preload("res://scenes/bricks/brick.tscn"),
+	preload("res://scenes/bricks/brick.tscn"),
+	preload("res://scenes/bricks/brick.tscn"),
+	preload("res://scenes/bricks/brick.tscn"),
+	preload("res://scenes/bricks/brick.tscn"),
+	preload("res://scenes/bricks/brick.tscn"),
+	preload("res://scenes/bricks/blue_brick.tscn"),
+	preload("res://scenes/bricks/green_brick.tscn"),
+	preload("res://scenes/bricks/orange_brick.tscn"),
+	preload("res://scenes/bricks/pink_brick.tscn"),
+	preload("res://scenes/bricks/red_brick.tscn")
+]
+
 signal balls_deleted
+
+func setup_level():
+	for r in rows:
+		for c in columns:
+			var rn = randi_range(0, 2)
+			if rn > 0:
+				var i = randi_range(0, len(brick_scenes) - 1)
+				var brick = brick_scenes[i].instantiate()
+				brick.position = Vector2(margin + (34 * c), margin + (18 * r))
+				$Bricks.add_child(brick)
 
 func _process(_delta: float) -> void:
 	if Globals.health <= 0 and not game_over:
@@ -22,6 +54,7 @@ func _process(_delta: float) -> void:
 		game_over = true
 
 func _ready() -> void:
+	setup_level()
 	var blue_bricks = get_tree().get_nodes_in_group('blue_brick')
 	for bb in blue_bricks:
 		bb.connect('more_balls', add_more_balls)
@@ -50,6 +83,7 @@ func on_green_brick_hit(ball: Node2D):
 
 
 func _on_bottom_wall_body_entered(body: Node2D) -> void:
+	body.queue_free()
 	ball_count -= 1
 	if ball_count <= 0:
 		Globals.health -= 1
