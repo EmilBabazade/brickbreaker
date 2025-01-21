@@ -6,7 +6,7 @@ var direction: Vector2
 func _ready() -> void:
 	var rng = RandomNumberGenerator.new()
 	var random_num = rng.randi_range(0, 100)
-	direction = Vector2(0.3, -1) if random_num % 2 == 0 else Vector2(-0.3, 1)
+	direction = Vector2(0.3, -1) if random_num % 2 == 0 else Vector2(-0.3, -1)
 	velocity = direction * speed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

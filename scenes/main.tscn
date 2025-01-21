@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cnx8ievhje3ma"]
+[gd_scene load_steps=14 format=3 uid="uid://cnx8ievhje3ma"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_x6lck"]
 [ext_resource type="PackedScene" uid="uid://dpg0m1ms3vuxq" path="res://scenes/player/player.tscn" id="1_yfe1c"]
@@ -17,6 +17,9 @@ size = Vector2(64, 648)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1gh4"]
 size = Vector2(1152, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgjva"]
+size = Vector2(1152, 24)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_x6lck")
@@ -59,14 +62,14 @@ collision_mask = 9
 position = Vector2(600, -351)
 shape = SubResource("RectangleShape2D_j1gh4")
 
-[node name="TopWall2" type="StaticBody2D" parent="Walls"]
-position = Vector2(-24, 320)
-collision_layer = 4
-collision_mask = 9
+[node name="BottomWall" type="Area2D" parent="Walls"]
+position = Vector2(576, 656)
+collision_layer = 2
+collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall2"]
-position = Vector2(600, 360)
-shape = SubResource("RectangleShape2D_j1gh4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_lgjva")
 
 [node name="Ball" parent="." instance=ExtResource("2_a6prq")]
 position = Vector2(576, 536)
@@ -913,9 +916,6 @@ position = Vector2(576, 312)
 [node name="GreenBrick11" parent="Bricks" instance=ExtResource("8_m7dce")]
 position = Vector2(720, 376)
 
-[node name="GreenBrick14" parent="Bricks" instance=ExtResource("8_m7dce")]
-position = Vector2(576, 464)
-
 [node name="GreenBrick12" parent="Bricks" instance=ExtResource("8_m7dce")]
 position = Vector2(912, 376)
 
@@ -923,3 +923,5 @@ position = Vector2(912, 376)
 position = Vector2(1080, 280)
 
 [node name="UI" parent="." instance=ExtResource("6_2qpyi")]
+
+[connection signal="body_entered" from="Walls/BottomWall" to="." method="_on_bottom_wall_body_entered"]
