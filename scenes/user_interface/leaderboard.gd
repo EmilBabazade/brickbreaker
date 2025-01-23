@@ -10,3 +10,7 @@ func add_row(username: String, score: int):
 	var row = row_scene.instantiate()
 	row.set_text(username, score)
 	$ScrollContainer/Table.add_child(row)
+
+
+func _on_menu_button_pressed() -> void:
+	get_tree().change_scene_to_file(Globals.prevscene)

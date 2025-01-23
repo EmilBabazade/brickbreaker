@@ -23,3 +23,8 @@ func _on_start_button_pressed() -> void:
 #	and ball count need to be reset
 	Globals.restart()
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
+
+
+func _on_leaderboard_pressed() -> void:
+	Globals.prevscene = get_tree().current_scene.scene_file_path
+	get_tree().change_scene_to_file("res://scenes/user_interface/leaderboard.tscn")

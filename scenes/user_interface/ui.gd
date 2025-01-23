@@ -3,6 +3,8 @@ extends CanvasLayer
 signal restart
 
 func _ready() -> void:
+	if Globals.player_name:
+		$VBoxContainer/TextEdit.text = Globals.player_name
 	reset()
 	Globals.connect('score_changed', on_score_changed)
 	Globals.connect('health_changed', on_health_changed)
@@ -36,3 +38,12 @@ func _on_restart_button_pressed() -> void:
 
 func _on_menu_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/user_interface/main_menu.tscn")
+
+
+func _on_leaderboard_pressed() -> void:
+	Globals.prevscene = get_tree().current_scene.scene_file_path
+	get_tree().change_scene_to_file("res://scenes/user_interface/leaderboard.tscn")
+
+
+func _on_text_edit_text_changed() -> void:
+	Globals.player_name = $VBoxContainer/TextEdit.text

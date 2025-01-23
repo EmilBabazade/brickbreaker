@@ -65,7 +65,7 @@ func _ready() -> void:
 func delete_balls():
 	var balls = $Balls.get_children()
 	for ball in balls:
-		var audio = ball.get_node("AudioStreamPlayer")
+		var audio = ball.get_node_or_null("AudioStreamPlayer")
 		if audio:
 			audio.stop()
 		ball.queue_free()

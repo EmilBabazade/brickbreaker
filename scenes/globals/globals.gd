@@ -23,3 +23,7 @@ var mouse_controls = true
 func restart():
 	score = 0
 	health = max_health
+
+var prevscene: String
+
+var player_name: String

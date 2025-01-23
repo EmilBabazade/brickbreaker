@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scenes/user_interface/ui.gd" id="1_chsni"]
 [ext_resource type="FontFile" uid="uid://dwblw0b46amqp" path="res://fonts/Teko-VariableFont_wght.ttf" id="2_dufk1"]
 [ext_resource type="AudioStream" uid="uid://ba3jj7yb80byt" path="res://sounds/GameSFX/Descending/Retro Descending Long 04.wav" id="3_8yam4"]
+[ext_resource type="StyleBox" uid="uid://bfvs8h2mugqr2" path="res://scenes/user_interface/ui.tres" id="3_eq7d3"]
 [ext_resource type="AudioStream" uid="uid://cothnsvoquexf" path="res://sounds/GameSFX/Music/Success/Retro Success Melody 04 - electric piano 2.wav" id="4_eydnq"]
 
 [sub_resource type="Gradient" id="Gradient_eng0i"]
@@ -17,9 +18,6 @@ fill_to = Vector2(0.5, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrs8b"]
 bg_color = Color(0.0646965, 0.0646965, 0.0646965, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x7yy"]
-bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_chsni")
@@ -82,11 +80,17 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_jrs8b")
 text = "YOU WON!"
 horizontal_alignment = 1
 
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_eq7d3")
+placeholder_text = "Enter Your Name"
+
 [node name="FinalScore" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_dufk1")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_3x7yy")
+theme_override_styles/normal = ExtResource("3_eq7d3")
 text = "Score: "
 horizontal_alignment = 1
 
@@ -95,6 +99,12 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_dufk1")
 theme_override_font_sizes/font_size = 50
 text = "RESTART"
+
+[node name="Leaderboard" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dufk1")
+theme_override_font_sizes/font_size = 50
+text = "LEADERBOARD"
 
 [node name="MenuButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -109,5 +119,7 @@ stream = ExtResource("3_8yam4")
 stream = ExtResource("4_eydnq")
 volume_db = 21.629
 
+[connection signal="text_changed" from="VBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

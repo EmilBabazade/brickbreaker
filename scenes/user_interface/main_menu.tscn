@@ -47,6 +47,12 @@ theme_override_fonts/font = ExtResource("1_xrclb")
 theme_override_font_sizes/font_size = 50
 text = "CONTROLS: SHIT"
 
+[node name="Leaderboard" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xrclb")
+theme_override_font_sizes/font_size = 50
+text = "LEADERBOARD"
+
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xrclb")
@@ -56,4 +62,5 @@ text = "QUIT
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="VBoxContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
