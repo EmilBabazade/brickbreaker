@@ -27,3 +27,5 @@ func restart():
 var prevscene: String
 
 var player_name: String
+
+var scores: Array[Dictionary] = []
