@@ -3,12 +3,12 @@
 [ext_resource type="FontFile" uid="uid://dwblw0b46amqp" path="res://fonts/Teko-VariableFont_wght.ttf" id="1_xrclb"]
 [ext_resource type="Script" path="res://scenes/user_interface/main_menu.gd" id="1_yh1nf"]
 
-[sub_resource type="Gradient" id="Gradient_mopc4"]
+[sub_resource type="Gradient" id="Gradient_fuohp"]
 interpolation_mode = 1
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_a3q2x"]
-gradient = SubResource("Gradient_mopc4")
+gradient = SubResource("Gradient_fuohp")
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_yh1nf")

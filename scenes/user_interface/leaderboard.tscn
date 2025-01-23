@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqwry1v7vscs6"]
+
+[ext_resource type="FontFile" uid="uid://dwblw0b46amqp" path="res://fonts/Teko-VariableFont_wght.ttf" id="1_bhywb"]
+[ext_resource type="Script" path="res://scenes/user_interface/leaderboard.gd" id="1_w0m1b"]
+[ext_resource type="PackedScene" uid="uid://benwns6rrwxmj" path="res://scenes/user_interface/leaderboard_row.tscn" id="2_kiqwf"]
+
+[sub_resource type="Gradient" id="Gradient_mopc4"]
+interpolation_mode = 1
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oavym"]
+gradient = SubResource("Gradient_mopc4")
+
+[node name="Leaderboard" type="CanvasLayer"]
+script = ExtResource("1_w0m1b")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_oavym")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 24.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_bhywb")
+theme_override_font_sizes/font_size = 100
+text = "LEADERBOARD"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -458.0
+offset_top = -200.0
+offset_right = 458.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Table" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="LeaderboardRow" parent="ScrollContainer/Table" instance=ExtResource("2_kiqwf")]
+layout_mode = 2
+
+[node name="MenuButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -296.0
+offset_top = -105.0
+offset_right = 299.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_bhywb")
+theme_override_font_sizes/font_size = 50
+text = "Main Menu"
