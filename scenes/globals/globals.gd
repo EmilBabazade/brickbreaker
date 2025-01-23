@@ -28,4 +28,22 @@ var prevscene: String
 
 var player_name: String
 
-var scores: Array[Dictionary] = []
+var scores: Array = []
+
+var _savefile = 'user://savegame.save'
+func save_scores():
+	var save_file = FileAccess.open(_savefile, FileAccess.WRITE)
+	var json_string = JSON.stringify(scores)
+	save_file.store_line(json_string)
+
+func load_scores():
+	if not FileAccess.file_exists(_savefile):
+		return
+	var save_file = FileAccess.open(_savefile, FileAccess.READ)
+	var json_string = save_file.get_line()
+	var json = JSON.new()
+	var parse_result = json.parse(json_string)
+	if not parse_result == OK:
+		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+		return
+	scores = json.data

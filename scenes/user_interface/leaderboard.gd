@@ -15,6 +15,7 @@ func add_player_score():
 		}
 		Globals.scores.append(player_score)
 		Globals.score = 0
+		Globals.save_scores()
 
 func sort_descending(a, b):
 	return a['score'] > b['score']

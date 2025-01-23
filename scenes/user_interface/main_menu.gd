@@ -2,6 +2,7 @@ extends CanvasLayer
 
 func _ready() -> void:
 	set_control_text()
+	Globals.load_scores()
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
